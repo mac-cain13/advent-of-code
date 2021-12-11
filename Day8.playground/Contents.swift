@@ -209,7 +209,7 @@ let data: [(input: [String], output: [String])] =
 }
 
 // The input contains 10 unique patterns, that always represent all 10 digits.
-// Therefore we're always able to find digits 1 and 4.
+// Therefore we will always able to find digits 1 and 4.
 //
 // This makes the following logic to detect all digits possible:
 //  1 is unique in length (2)
