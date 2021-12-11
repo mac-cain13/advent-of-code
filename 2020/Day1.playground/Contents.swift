@@ -203,6 +203,7 @@ let expenses: [Float] = [
     1337,
 ]
 
+// Part 1
 for expense in expenses {
     let summations = vDSP.add(expense, expenses)
     if let index = summations.firstIndex(of: 2020) {
@@ -211,3 +212,13 @@ for expense in expenses {
     }
 }
 
+// Part 2
+for a in expenses {
+    for b in expenses {
+        for c in expenses {
+            if a+b+c == 2020 {
+                print(a*b*c)
+            }
+        }
+    }
+}
