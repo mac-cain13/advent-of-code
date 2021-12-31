@@ -186,18 +186,19 @@ struct Cave {
         
         var lowestScorePath = Path(positions: [departure], totalRisk: 0)
         var currentPaths: Set<Path> = [lowestScorePath]
-        var visitedPositions: Set<Position> = [departure]
-        
+        var visitedPositions: [[Bool]] = Array(repeating: Array(repeating: false, count: riskLevelMap.first!.count), count: riskLevelMap.count)
+        visitedPositions[departure.y][departure.x] = true
+
         while lowestScorePath.currentPosition != destination {
             highestX = max(highestX, lowestScorePath.currentPosition.x)
             highestY = max(highestY, lowestScorePath.currentPosition.y)
             print("(\(highestX),\(highestY)) - (\(lowestScorePath.currentPosition.x),\(lowestScorePath.currentPosition.y))")
             
-            let nextPositions = neighbours(of: lowestScorePath.currentPosition).subtracting(visitedPositions)
+            let nextPositions = neighbours(of: lowestScorePath.currentPosition).filter { !visitedPositions[$0.y][$0.x] }
             let nextPaths = nextPositions.map { position in lowestScorePath.appending(position: position, riskLevel: riskLevel(for: position)) }
 
             currentPaths = currentPaths.subtracting([lowestScorePath]).union(nextPaths)
-            visitedPositions = visitedPositions.union(nextPositions)
+            nextPositions.forEach { visitedPositions[$0.y][$0.x] = true }
             lowestScorePath = currentPaths.min { lhs, rhs in lhs.totalRisk < rhs.totalRisk }!
         }
         
@@ -217,4 +218,4 @@ struct Path: Hashable {
 }
 
 print(Cave(riskLevelMap: input).lowestRiskPath().totalRisk) // Part 1
-//print(Cave(riskLevelMap: input).expanding(times: 5).lowestRiskPath().totalRisk) // Part 2, SLOW! Took 36min on my machine.
+print(Cave(riskLevelMap: input).expanding(times: 5).lowestRiskPath().totalRisk) // Part 2, SLOW! Took 36min on my machine.
