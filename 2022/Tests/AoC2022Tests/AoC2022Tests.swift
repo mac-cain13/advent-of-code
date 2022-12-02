@@ -3,6 +3,16 @@ import XCTest
 
 final class AoC2022Tests: XCTestCase {
     
+    // MARK: - Day 2
+    
+    func testDay2Part2() throws {
+        test(day2part2, dayNumber: 2, sampleResult: 12, inputResult: 10560)
+    }
+    
+    func testDay2Part1() throws {
+        test(day2part1, dayNumber: 2, sampleResult: 15, inputResult: 9651)
+    }
+    
     // MARK: - Day 1
     
     func testDay1Combined() throws {
@@ -19,10 +29,15 @@ final class AoC2022Tests: XCTestCase {
     }
 }
 
-func test<T: Equatable>(_ function: (String) -> T, dayNumber: Int, sampleResult: T, inputResult: T) {
+func test<T: Equatable>(_ function: (String) -> T, dayNumber: Int, sampleResult: T, inputResult: T?) {
     let samplePath = Bundle.module.path(forResource: "day\(dayNumber)", ofType: "sample", inDirectory: "Input")!
     XCTAssertEqual(function(samplePath), sampleResult)
     
     let inputPath = Bundle.module.path(forResource: "day\(dayNumber)", ofType: "input", inDirectory: "Input")!
-    XCTAssertEqual(function(inputPath), inputResult)
+    let answer = function(inputPath)
+    if (inputResult == nil) {
+        print("The answer is ==>", answer)
+    } else {
+        XCTAssertEqual(answer, inputResult)
+    }
 }

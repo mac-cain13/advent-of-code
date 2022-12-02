@@ -11,7 +11,7 @@ public func day1part1(filePath: String) -> Int {
     var highest = 0
     var current = 0
 
-    for line in LineReader(path: filePath)! {
+    for line in LineReader(path: filePath) {
         if (line.isEmpty) {
             highest = max(highest, current)
             current = 0
@@ -29,7 +29,7 @@ public func day1part2(filePath: String) -> Int {
     var sums: [Int] = []
     var current = 0
 
-    for line in LineReader(path: filePath)! {
+    for line in LineReader(path: filePath) {
         if (line.isEmpty) {
             sums.append(current)
             current = 0
@@ -48,7 +48,7 @@ public func day1(highestN: Int) -> (String) -> Int {
         var highest = ArraySlice(repeating: 0, count: highestN)
         var current = 0
         
-        for line in LineReader(path: filePath)! {
+        for line in LineReader(path: filePath) {
             if line.isEmpty {
                 if highest.first! < current {
                     highest = (highest + [current]).sorted().dropFirst()
