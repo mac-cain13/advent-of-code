@@ -3,6 +3,16 @@ import XCTest
 
 final class AoC2022Tests: XCTestCase {
     
+    // MARK: - Day 4
+    
+    func testDay4Part2() throws {
+        test(day4part2, dayNumber: 4, sampleResult: 4, inputResult: 891)
+    }
+    
+    func testDay4Part1() throws {
+        test(day4part1, dayNumber: 4, sampleResult: 2, inputResult: 602)
+    }
+    
     // MARK: - Day 3
     
     func testDay3Part2() throws {
