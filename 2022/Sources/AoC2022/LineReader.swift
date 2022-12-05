@@ -19,7 +19,7 @@ class LineReader: Sequence, IteratorProtocol {
         var line: UnsafeMutablePointer<CChar>? = nil
         var linecap: Int = 0
         defer { if (line != nil) { free(line!) } }
-        return getline(&line, &linecap, self.file) > 0 ? String(cString: line!).trimmingCharacters(in: .whitespacesAndNewlines) : nil
+        return getline(&line, &linecap, self.file) > 0 ? String(cString: line!).trimmingCharacters(in: .newlines) : nil
     }
 
     deinit {
