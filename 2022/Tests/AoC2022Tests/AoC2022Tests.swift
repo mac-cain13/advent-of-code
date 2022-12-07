@@ -3,10 +3,20 @@ import XCTest
 
 final class AoC2022Tests: XCTestCase {
     
+    // MARK: - Day 7
+    
+    func testDay7Part2() throws {
+        test(day7part2, dayNumber: 7, sampleResult: 24933642, inputResult: 578710)
+    }
+
+    func testDay7Part1() throws {
+        test(day7part1, dayNumber: 7, sampleResult: 95437, inputResult: 1447046)
+    }
+    
     // MARK: - Day 6
     
     func testDay6Part2() throws {
-        test(day6(uniqueCharactersNeeded: 14), dayNumber: 6, sampleResult: 19, inputResult: nil)
+        test(day6(uniqueCharactersNeeded: 14), dayNumber: 6, sampleResult: 19, inputResult: 3051)
     }
     
     func testDay6Part1() throws {
