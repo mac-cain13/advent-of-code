@@ -7,8 +7,8 @@
 
 import Foundation
 
-typealias Coord = (x: Int, y: Int)
-let allDirections: [Coord] = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+private typealias Coord = (x: Int, y: Int)
+private let allDirections: [Coord] = [(-1, 0), (1, 0), (0, -1), (0, 1)]
 
 func day8part1(filePath: String) -> Int {
     let matrix = LineReader(path: filePath)
@@ -44,7 +44,7 @@ func day8part2(filePath: String) -> Int {
             .max()!
 }
 
-func scan(direction: Coord, position prevPosition: Coord, maxHeight: Int, in matrix: [[Int]], count: Int = 0) -> (visibleTrees: Int, edgeVisible: Bool) {
+private func scan(direction: Coord, position prevPosition: Coord, maxHeight: Int, in matrix: [[Int]], count: Int = 0) -> (visibleTrees: Int, edgeVisible: Bool) {
     let position: Coord = (prevPosition.x + direction.x, prevPosition.y + direction.y)
 
     guard position.x >= 0 && position.x < matrix.count else { return (count, true) }

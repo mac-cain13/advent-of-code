@@ -13,7 +13,10 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .executableTarget(
             name: "AoC2022",
-            dependencies: []),
+            dependencies: [],
+            resources: [
+                .copy("Input"),
+            ]),
         .testTarget(
             name: "AoC2022Tests",
             dependencies: ["AoC2022"],
