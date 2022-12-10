@@ -39,7 +39,6 @@ func day9(ropeLength: Int) -> (String) -> Int {
                 let amount = Int(parts.last!)!
                 return Array(repeating: direction, count: amount)
             }
-            
             .reduce(into: Set(rope), { visited, instruction in
                 rope[0] = rope[0].move(instruction)
                 for i in rope.indices.dropFirst() {

@@ -28,8 +28,8 @@ struct ChunkedSequence<InnerSequence: IteratorProtocol>: Sequence, IteratorProto
     }
 }
 
-extension IteratorProtocol {
-    func chunked(size: Int) -> ChunkedSequence<Self> {
-        ChunkedSequence(innerSequence: self, chunkSize: size)
+extension Sequence {
+    func chunked(size: Int) -> ChunkedSequence<Self.Iterator> {
+        ChunkedSequence(innerSequence: makeIterator(), chunkSize: size)
     }
 }

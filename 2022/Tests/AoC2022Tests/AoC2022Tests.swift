@@ -4,14 +4,10 @@ import XCTest
 final class AoC2022Tests: XCTestCase {
     
     // MARK: - Day 10
-    
-//    func testDay10Part2() throws {
-//        test(day10part2, dayNumber: 10, sampleResult: -1, inputResult: nil)
-//    }
-//
-//    func testDay9Part1() throws {
-//        test(day10part1, dayNumber: 10, sampleResult: -1, inputResult: nil)
-//    }
+
+    func testDay10part1() throws {
+        test(day10, dayNumber: 10, sampleResult: 13140, inputResult: 14520)
+    }
     
     // MARK: - Day 9
     
