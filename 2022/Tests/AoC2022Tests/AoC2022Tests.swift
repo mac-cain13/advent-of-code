@@ -3,6 +3,16 @@ import XCTest
 
 final class AoC2022Tests: XCTestCase {
     
+    // MARK: - Day 11
+    
+    func testDay11part2() throws {
+        test(day11(rounds: 10000, worryLevelDivider: 1), dayNumber: 11, sampleResult: 2713310158, inputResult: 19754471646)
+    }
+
+    func testDay11part1() throws {
+        test(day11(rounds: 20, worryLevelDivider: 3), dayNumber: 11, sampleResult: 10605, inputResult: 101436)
+    }
+    
     // MARK: - Day 10
 
     func testDay10part1() throws {
