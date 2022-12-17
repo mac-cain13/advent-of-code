@@ -30,13 +30,9 @@ private struct Coord: Hashable {
         y = coords.last!
     }
     
-    func restingCoord(in grid: Set<Coord>, abyssAboveY: Int) -> Coord? {
-        if let validMove = moves.first(where: { !grid.contains($0) }) {
-            guard validMove.y <= abyssAboveY else { return nil }
-            return validMove.restingCoord(in: grid, abyssAboveY: abyssAboveY)
-        }
-
-        return self
+    func restingCoord(in grid: Set<Coord>, floorY: Int) -> Coord? {
+        guard let validMove = moves.first(where: { !grid.contains($0) && $0.y < floorY }) else { return self }
+        return validMove.restingCoord(in: grid, floorY: floorY)
     }
 }
 
@@ -60,22 +56,26 @@ private struct Path {
 
 private let sandEntrance = Coord(x: 500, y: 0)
 
-func day14part1(filePath: String) -> Int {
+func day14(filePath: String) -> (part1: Int, part2: Int) {
     let pathCoords = LineReader(path: filePath)
         .map(Path.init)
         .flatMap(\.coords)
-    
+
     var grid = Set(pathCoords)
-    let lowestRock = grid.map(\.y).max()!
-    var sand = 0
-    while let sandAtRest = sandEntrance.restingCoord(in: grid, abyssAboveY: lowestRock) {
-        sand += 1
+    let floorY = grid.map(\.y).max()! + 2
+    
+    var part1: Int?
+    var sandCount = 0
+    while let sandAtRest = sandEntrance.restingCoord(in: grid, floorY: floorY), sandAtRest != sandEntrance {
+        if part1 == nil && sandAtRest.y+1 == floorY {
+            part1 = sandCount
+        }
+        sandCount += 1
         grid.insert(sandAtRest)
     }
     
-    return sand
+    return (part1: part1!, part2: sandCount+1)
 }
 
-func day14part2(filePath: String) -> Int {
-    return 0
-}
+func day14part1(filePath: String) -> Int { day14(filePath: filePath).part1 }
+func day14part2(filePath: String) -> Int { day14(filePath: filePath).part2 }

@@ -6,7 +6,7 @@ final class AoC2022Tests: XCTestCase {
     // MARK: - Day 14
     
     func testDay14part2() throws {
-        test(day14part2, dayNumber: 14, sampleResult: 93, inputResult: nil)
+        test(day14part2, dayNumber: 14, sampleResult: 93, inputResult: 22646)
     }
 
     func testDay14part1() throws {
