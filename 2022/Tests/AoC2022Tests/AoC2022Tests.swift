@@ -3,6 +3,136 @@ import XCTest
 
 final class AoC2022Tests: XCTestCase {
     
+    // MARK: - Day 25
+    
+    func testDay25part2() throws {
+        throw XCTSkip()
+        test(day25part2, dayNumber: 25, sampleResult: -1, inputResult: nil)
+    }
+    
+    func testDay25part1() throws {
+        throw XCTSkip()
+        test(day25part1, dayNumber: 25, sampleResult: -1, inputResult: nil)
+    }
+    
+    // MARK: - Day 24
+    
+    func testDay24part2() throws {
+        throw XCTSkip()
+        test(day24part2, dayNumber: 24, sampleResult: -1, inputResult: nil)
+    }
+    
+    func testDay24part1() throws {
+        throw XCTSkip()
+        test(day24part1, dayNumber: 24, sampleResult: -1, inputResult: nil)
+    }
+    
+    // MARK: - Day 23
+    
+    func testDay23part2() throws {
+        throw XCTSkip()
+        test(day23part2, dayNumber: 23, sampleResult: -1, inputResult: nil)
+    }
+    
+    func testDay23part1() throws {
+        throw XCTSkip()
+        test(day23part1, dayNumber: 23, sampleResult: -1, inputResult: nil)
+    }
+    
+    // MARK: - Day 22
+    
+    func testDay22part2() throws {
+        throw XCTSkip()
+        test(day22part2, dayNumber: 22, sampleResult: -1, inputResult: nil)
+    }
+    
+    func testDay22part1() throws {
+        throw XCTSkip()
+        test(day22part1, dayNumber: 22, sampleResult: -1, inputResult: nil)
+    }
+    
+    // MARK: - Day 21
+    
+    func testDay21part2() throws {
+        throw XCTSkip()
+        test(day21part2, dayNumber: 21, sampleResult: -1, inputResult: nil)
+    }
+    
+    func testDay21part1() throws {
+        throw XCTSkip()
+        test(day21part1, dayNumber: 21, sampleResult: -1, inputResult: nil)
+    }
+    
+    // MARK: - Day 20
+    
+    func testDay20part2() throws {
+        throw XCTSkip()
+        test(day20part2, dayNumber: 20, sampleResult: -1, inputResult: nil)
+    }
+    
+    func testDay20part1() throws {
+        throw XCTSkip()
+        test(day20part1, dayNumber: 20, sampleResult: -1, inputResult: nil)
+    }
+    
+    // MARK: - Day 19
+    
+    func testDay19part2() throws {
+        throw XCTSkip()
+        test(day19part2, dayNumber: 19, sampleResult: -1, inputResult: nil)
+    }
+    
+    func testDay19part1() throws {
+        throw XCTSkip()
+        test(day19part1, dayNumber: 19, sampleResult: -1, inputResult: nil)
+    }
+    
+    // MARK: - Day 18
+    
+    func testDay18part2() throws {
+        throw XCTSkip()
+        test(day18part2, dayNumber: 18, sampleResult: -1, inputResult: nil)
+    }
+    
+    func testDay18part1() throws {
+        throw XCTSkip()
+        test(day18part1, dayNumber: 18, sampleResult: -1, inputResult: nil)
+    }
+    
+    // MARK: - Day 17
+    
+    func testDay17part2() throws {
+        throw XCTSkip()
+        test(day17part2, dayNumber: 17, sampleResult: -1, inputResult: nil)
+    }
+    
+    func testDay17part1() throws {
+        throw XCTSkip()
+        test(day17part1, dayNumber: 17, sampleResult: -1, inputResult: nil)
+    }
+    
+    // MARK: - Day 16
+    
+    func testDay16part2() throws {
+        throw XCTSkip()
+        test(day16part2, dayNumber: 16 , sampleResult: -1, inputResult: nil)
+    }
+    
+    func testDay16part1() throws {
+        throw XCTSkip()
+        test(day16part1, dayNumber: 16, sampleResult: -1, inputResult: nil)
+    }
+    
+    // MARK: - Day 15
+    
+    func testDay15part2() throws {
+        test(day15part2, dayNumber: 15, sampleResult: 56000011, inputResult: nil)
+    }
+
+    func testDay15part1() throws {
+        test(day15part1, dayNumber: 15, sampleResult: 26, inputResult: 4827924)
+    }
+    
     // MARK: - Day 14
     
     func testDay14part2() throws {
